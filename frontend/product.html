@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Signature Tee | QUIET BATTLES™</title>
+
+    <meta name="description"
+          content="Discover the Signature Tee from QUIET BATTLES™ — The Gentle Armor collection.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+</head>
+
+<body>
+
+    <div class="site-frame">
+
+        <!-- NAVIGATION -->
+        <header class="header">
+
+            <nav class="nav nav-left">
+                <a href="index.html">HOME</a>
+                <a href="archive.html">THE ARCHIVE</a>
+                <a href="index.html#about">OUR STORY</a>
+            </nav>
+
+            <a href="index.html" class="logo">
+                QUIET BATTLES<span>™</span>
+            </a>
+
+            <nav class="nav nav-right">
+                <a href="product.html">SHOP</a>
+                <a href="cart.html" class="cart-button">CART ↗</a>
+            </nav>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+
+        </header>
+
+
+        <!-- MOBILE MENU -->
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html">HOME</a>
+            <a href="archive.html">THE ARCHIVE</a>
+            <a href="index.html#about">OUR STORY</a>
+            <a href="product.html">SHOP</a>
+            <a href="cart.html">CART</a>
+        </nav>
+
+
+        <!-- PRODUCT PAGE -->
+        <main class="product-page">
+
+            <!-- BREADCRUMB -->
+            <div class="product-breadcrumb">
+                <a href="index.html">HOME</a>
+                <span>/</span>
+                <a href="archive.html">THE ARCHIVE</a>
+                <span>/</span>
+                <span>THE GENTLE ARMOR™</span>
+            </div>
+
+
+            <!-- PRODUCT DETAILS -->
+            <section class="product-layout">
+
+                <!-- PRODUCT IMAGE GALLERY -->
+                <div class="product-gallery">
+
+                    <div class="product-main-image">
+                        <img
+                            id="productImage"
+                            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=85"
+                            alt="QUIET BATTLES Signature Tee">
+                    </div>
+
+                    <div class="product-image-label">
+                        <span>SERIES 01</span>
+                        <span id="productImageCollection">THE GENTLE ARMOR™</span>
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUCT INFORMATION -->
+                <div class="product-info">
+
+                    <p class="product-eyebrow">
+                        SERIES 01 / CHAPTER 03
+                    </p>
+
+                    <h1 id="productName">THE SIGNATURE TEE</h1>
+
+                    <p class="product-subtitle" id="productCollection">
+                        THE GENTLE ARMOR™
+                    </p>
+
+                    <p class="product-price" id="productPrice">
+                        ₹2,499
+                    </p>
+
+                    <div class="product-divider"></div>
+
+                    <p class="product-description" id="productDescription">
+                        Designed for the strength we carry in silence.
+
+                        The Signature Tee represents quiet confidence,
+                        personal expression and the stories we wear
+                        without saying a word.
+                    </p>
+
+
+                    <!-- SIZE SELECTION -->
+                    <div class="size-section">
+
+                        <div class="selection-heading">
+                            <label for="productSize">SELECT SIZE</label>
+                            <span>SIZE GUIDE</span>
+                        </div>
+
+                        <select id="productSize" name="size">
+                            <option value="">Choose your size</option>
+                            <option value="S">Small (S)</option>
+                            <option value="M">Medium (M)</option>
+                            <option value="L">Large (L)</option>
+                            <option value="XL">Extra Large (XL)</option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- QUANTITY -->
+                    <div class="quantity-section">
+
+                        <label for="productQuantity">QUANTITY</label>
+
+                        <input
+                            type="number"
+                            id="productQuantity"
+                            name="quantity"
+                            value="1"
+                            min="1"
+                            max="10">
+
+                    </div>
+
+
+                    <!-- ADD TO CART -->
+                    <button type="button"
+                            class="add-to-cart-button"
+                            id="addToCart">
+
+                        ADD TO CART
+                        <span>↗</span>
+
+                    </button>
+
+                    <p id="productMessage"
+                       class="product-message"
+                       aria-live="polite"></p>
+
+
+                    <!-- PRODUCT INFORMATION -->
+                    <div class="product-extra">
+
+                        <div>
+                            <span>COLLECTION</span>
+                            <p id="productExtraCollection">THE GENTLE ARMOR™</p>
+                        </div>
+
+                        <div>
+                            <span>PRODUCT CODE</span>
+                            <p id="productCode">QB-001</p>
+                        </div>
+
+                        <div>
+                            <span>DESIGN PHILOSOPHY</span>
+                            <p>WEAR YOUR BATTLES.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- PRODUCT STORY -->
+            <section class="product-story">
+
+                <p class="section-label">THE STORY BEHIND THE PIECE</p>
+
+                <h2>STRENGTH DOESN'T<br>
+                    ALWAYS <span>MAKE NOISE.</span>
+                </h2>
+
+                <p>
+                    Every piece in QUIET BATTLES™ represents an emotion,
+                    an experience or a story that deserves to be seen.
+
+                    The Signature Tee is a reminder that even the quietest
+                    battles deserve recognition.
+                </p>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <a href="index.html">QUIET BATTLES™</a>
+
+            <p>WEAR YOUR BATTLES.</p>
+
+            <span>© 2026 QUIET BATTLES™</span>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+    <script src="product.js"></script>
+
+</body>
+</html>

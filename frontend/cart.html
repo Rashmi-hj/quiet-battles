@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Cart | QUIET BATTLES™</title>
+
+    <meta name="description"
+          content="Review your selected QUIET BATTLES™ collection pieces.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+    <div class="site-frame">
+
+        <!-- NAVIGATION -->
+        <header class="header">
+
+            <nav class="nav nav-left">
+                <a href="index.html">HOME</a>
+                <a href="archive.html">THE ARCHIVE</a>
+                <a href="index.html#about">OUR STORY</a>
+            </nav>
+
+            <a href="index.html" class="logo">
+                QUIET BATTLES<span>™</span>
+            </a>
+
+            <nav class="nav nav-right">
+                <a href="product.html">SHOP</a>
+                <a href="cart.html" class="cart-button">CART ↗</a>
+            </nav>
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Open navigation"
+                    aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+
+        </header>
+
+
+        <!-- MOBILE MENU -->
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html">HOME</a>
+            <a href="archive.html">THE ARCHIVE</a>
+            <a href="index.html#about">OUR STORY</a>
+            <a href="product.html">SHOP</a>
+            <a href="cart.html">CART</a>
+        </nav>
+
+
+        <!-- CART MAIN CONTENT -->
+        <main class="cart-page">
+
+            <section class="cart-heading">
+
+                <p class="section-label">YOUR SELECTION</p>
+
+                <h1>THE <span>COLLECTION.</span></h1>
+
+                <p>Every piece carries a story. Make yours count.</p>
+
+            </section>
+
+
+            <section class="cart-layout">
+
+                <!-- CART ITEMS -->
+                <div class="cart-items-section">
+
+                    <div class="cart-section-heading">
+                        <h2>YOUR CART</h2>
+                        <span id="cartItemCount">0 ITEMS</span>
+                    </div>
+
+                    <div id="cartItems" class="cart-items">
+
+                        <!-- Products will be displayed here using JavaScript -->
+
+                    </div>
+
+                    <!-- EMPTY CART -->
+                    <div id="emptyCart" class="empty-cart">
+
+                        <p class="empty-cart-symbol">✧</p>
+
+                        <h2>YOUR CART IS QUIET.</h2>
+
+                        <p>
+                            There are no pieces here yet.
+                            Discover something that speaks to your story.
+                        </p>
+
+                        <a href="archive.html" class="continue-shopping">
+                            EXPLORE THE ARCHIVE ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ORDER SUMMARY -->
+                <aside class="cart-summary">
+
+                    <p class="section-label">ORDER DETAILS</p>
+
+                    <h2>SUMMARY</h2>
+
+                    <div class="summary-row">
+                        <span>SUBTOTAL</span>
+                        <span id="cartSubtotal">₹0</span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>SHIPPING</span>
+                        <span>CALCULATED LATER</span>
+                    </div>
+
+                    <div class="summary-total">
+                        <span>TOTAL</span>
+                        <span id="cartTotal">₹0</span>
+                    </div>
+
+                    <button type="button"
+                            id="checkoutButton"
+                            class="checkout-button"
+                            disabled>
+                        PROCEED TO CHECKOUT ↗
+                    </button>
+
+                    <p class="checkout-note">
+                        Shipping and payment will be configured
+                        as part of the complete project.
+                    </p>
+
+                    <a href="archive.html" class="back-to-shopping">
+                        CONTINUE EXPLORING
+                    </a>
+
+                </aside>
+
+            </section>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer class="footer">
+
+            <a href="index.html">QUIET BATTLES™</a>
+
+            <p>WEAR YOUR BATTLES.</p>
+
+            <span>© 2026 QUIET BATTLES™</span>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+
+</body>
+</html>

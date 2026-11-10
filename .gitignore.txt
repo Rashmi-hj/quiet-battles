@@ -1,0 +1,16 @@
+# Java / Maven
+**/target/
+**/build/
+
+# Eclipse
+**/.metadata/
+**/.settings/
+**/.classpath
+**/.project
+
+# Secrets
+.env
+**/.env
+
+# Logs
+*.log

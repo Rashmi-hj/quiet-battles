@@ -1,0 +1,684 @@
+
+/* ==========================================
+   QUIET BATTLES™
+   COMPLETE HOMEPAGE STYLESHEET
+========================================== */
+
+
+/* ==========================================
+   1. HERO SECTION
+========================================== */
+
+.hero {
+    position: relative;
+    min-height: 680px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    gap: 55px;
+    padding: 65px 9%;
+
+    overflow: hidden;
+    background: var(--bg);
+}
+
+/* Hero decorative elements */
+
+.hero-decoration {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(197, 161, 106, 0.12);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.decoration-one {
+    top: -90px;
+    left: -90px;
+}
+
+.decoration-two {
+    bottom: -110px;
+    right: 35%;
+}
+
+
+/* ==========================================
+   2. HERO CONTENT
+========================================== */
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    animation: homeFadeIn 1s ease;
+}
+
+/* Eyebrow */
+
+.hero-content .eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+}
+
+/* Main heading */
+
+.hero-content h1 {
+    color: var(--ivory);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(55px, 7vw, 100px);
+    font-weight: 400;
+
+    line-height: 1.05;
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: var(--gold);
+}
+
+/* Gold divider */
+
+.gold-line {
+    width: 75px;
+    height: 1px;
+    background: var(--gold);
+    margin: 28px 0;
+}
+
+/* Hero description */
+
+.hero-content .hero-description {
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.9;
+
+    max-width: 430px;
+    margin-bottom: 35px;
+}
+
+/* Explore collection button */
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 16px 25px;
+
+    background: var(--gold);
+    color: #17120f;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+    border: 1px solid var(--gold);
+
+    transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+    background: transparent;
+    color: var(--gold-light);
+}
+
+.hero-button span {
+    font-size: 16px;
+}
+
+
+/* ==========================================
+   3. HERO CAPTION
+========================================== */
+
+.hero-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    gap: 25px;
+
+    margin-top: 35px;
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+}
+
+.hero-caption span {
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 1.6;
+}
+
+.hero-caption span:first-child {
+    color: var(--gold);
+}
+
+
+/* ==========================================
+   4. HERO IMAGE
+========================================== */
+
+.hero-visual {
+    position: relative;
+    height: 570px;
+    overflow: hidden;
+
+    animation: homeFadeIn 1.2s ease;
+}
+
+.image-frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-visual img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: grayscale(100%);
+
+    transition: transform 0.8s ease;
+}
+
+.hero-visual:hover img {
+    transform: scale(1.04);
+}
+
+/* Gold border around image */
+
+.image-frame::after {
+    content: "";
+
+    position: absolute;
+    inset: 15px;
+
+    border: 1px solid rgba(197, 161, 106, 0.45);
+
+    pointer-events: none;
+}
+
+/* Image label */
+
+.image-label {
+    position: absolute;
+
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 2;
+}
+
+.image-label span {
+    color: var(--ivory);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+/* ==========================================
+   5. BRAND INTRODUCTION
+========================================== */
+
+.brand-intro {
+    padding: 120px 9%;
+    text-align: center;
+
+    background: var(--bg-light);
+}
+
+.brand-intro .section-label {
+    color: var(--gold);
+
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+.brand-intro h2 {
+    max-width: 850px;
+
+    margin: 0 auto 25px;
+
+    color: var(--ivory);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(38px, 5vw, 65px);
+    font-weight: 400;
+
+    line-height: 1.25;
+}
+
+.brand-intro h2 span {
+    color: var(--gold);
+}
+
+.brand-intro > p:not(.section-label) {
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Discover our story link */
+
+.brand-intro > a {
+    display: inline-block;
+
+    margin-top: 8px;
+    padding-bottom: 8px;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+
+    transition: color 0.3s ease;
+}
+
+.brand-intro > a:hover {
+    color: var(--ivory);
+}
+
+
+/* ==========================================
+   6. FEATURED COLLECTION
+========================================== */
+
+main > section.collection {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 85px 9%;
+    margin: 0;
+
+    gap: 40px;
+
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Collection heading - Left side */
+
+main > section.collection .collection-heading {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    justify-content: center;
+
+    flex: 1;
+    min-width: 0;
+
+    gap: 12px;
+    margin: 0;
+
+    text-align: left;
+}
+
+/* First collection label */
+
+main > section.collection .collection-heading .section-label {
+    color: var(--gold);
+
+    font-size: 11px;
+    letter-spacing: 4px;
+
+    margin: 0;
+}
+
+/* Series 01 heading */
+
+main > section.collection .collection-heading h2 {
+    color: var(--ivory);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(45px, 6vw, 75px);
+    font-weight: 400;
+
+    line-height: 1.1;
+    letter-spacing: 2px;
+
+    margin: 0;
+}
+
+/* Gentle Armor text */
+
+main > section.collection .collection-heading > p:last-child {
+    color: var(--muted);
+
+    font-size: 13px;
+    letter-spacing: 2px;
+
+    margin: 0;
+}
+
+/* Explore archive link - Right side */
+
+main > section.collection .collection-link {
+    display: inline-block;
+    flex-shrink: 0;
+
+    color: var(--gold-light);
+
+    font-size: 11px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+
+    text-decoration: none;
+
+    padding-bottom: 9px;
+    border-bottom: 1px solid var(--gold);
+
+    transition: all 0.3s ease;
+}
+
+main > section.collection .collection-link:hover {
+    color: var(--ivory);
+    border-color: var(--ivory);
+}
+
+
+/* ==========================================
+   7. OPTIONAL COLLECTION IMAGE
+========================================== */
+
+.collection-image {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+}
+
+.collection-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    filter: grayscale(100%);
+
+    transition: transform 0.8s ease;
+}
+
+.collection-image:hover img {
+    transform: scale(1.04);
+}
+
+/* Collection image overlay */
+
+.collection-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    padding: 45px;
+
+    background: linear-gradient(
+        to top,
+        rgba(15, 12, 10, 0.8),
+        transparent 70%
+    );
+}
+
+.collection-overlay .section-label {
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.collection-overlay h3 {
+    color: var(--ivory);
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(30px, 5vw, 55px);
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   8. HOMEPAGE ANIMATIONS
+========================================== */
+
+@keyframes homeFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==========================================
+   9. TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        gap: 35px;
+        padding: 55px 6%;
+    }
+
+    .hero-visual {
+        height: 480px;
+    }
+
+    .brand-intro {
+        padding: 85px 6%;
+    }
+
+    main > section.collection {
+        padding: 75px 6%;
+    }
+
+    .collection-image {
+        height: 450px;
+    }
+
+}
+
+
+/* ==========================================
+   10. MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 768px) {
+
+    /* Hero */
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        padding: 45px 6%;
+        gap: 35px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(48px, 12vw, 75px);
+    }
+
+    .hero-visual {
+        height: 480px;
+    }
+
+    .hero-caption {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    /* Brand introduction */
+
+    .brand-intro {
+        padding: 75px 7%;
+    }
+
+    /* Featured collection */
+
+    main > section.collection {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 65px 7%;
+        gap: 30px;
+    }
+
+    main > section.collection .collection-heading {
+        width: 100%;
+    }
+
+    main > section.collection .collection-heading h2 {
+        font-size: 48px;
+    }
+
+    main > section.collection .collection-link {
+        margin-top: 5px;
+    }
+
+    /* Optional collection image */
+
+    .collection-image {
+        height: 430px;
+    }
+
+    .collection-overlay {
+        padding: 25px;
+    }
+
+}
+
+
+/* ==========================================
+   11. SMALL MOBILE SCREENS
+========================================== */
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 35px 5%;
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+    }
+
+    .hero-visual {
+        height: 380px;
+    }
+
+    .hero-caption span {
+        font-size: 9px;
+    }
+
+    .image-label {
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+    }
+
+    .brand-intro {
+        padding: 65px 5%;
+    }
+
+    .brand-intro h2 {
+        font-size: 37px;
+    }
+
+    main > section.collection {
+        padding: 55px 5%;
+    }
+
+    main > section.collection .collection-heading h2 {
+        font-size: 43px;
+    }
+
+    main > section.collection .collection-link {
+        font-size: 10px;
+    }
+
+    .collection-image {
+        height: 350px;
+    }
+
+    .collection-overlay {
+        padding: 20px;
+    }
+
+}
+
+
+/* ==========================================
+   12. HOMEPAGE LINK STYLING
+========================================== */
+
+body a,
+body a:link,
+body a:visited,
+body a:active,
+body a:focus {
+    text-decoration: none;
+}
+
+/* Keep the gold underline on selected links */
+
+.brand-intro > a,
+main > section.collection .collection-link {
+    border-bottom: 1px solid var(--gold);
+}

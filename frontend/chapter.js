@@ -1,5 +1,5 @@
 
-const API_BASE_URL = "http://localhost:8080/api";
+const API_BASE_URL = "https://quiet-battles-backend.onrender.com/api";
 
 const fallbackImage =
     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85";

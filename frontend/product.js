@@ -4,7 +4,7 @@
 // SPRING BOOT + MYSQL INTEGRATION
 // =========================================
 
-const API_BASE_URL = "http://localhost:8080/api/products";
+const API_BASE_URL = "https://quiet-battles-backend.onrender.com/api/products";
 
 const DEFAULT_IMAGE =
     "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=85";

@@ -4,7 +4,7 @@
    Spring Boot + MySQL Integration
 ===================================== */
 
-const API_BASE_URL = "http://localhost:8080/api";
+const API_BASE_URL = "https://quiet-battles-backend.onrender.com/api";
 
 // Store records fetched from the backend
 let seriesRecords = [];

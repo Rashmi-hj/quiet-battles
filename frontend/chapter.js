@@ -1,4 +1,3 @@
-
 const API_BASE_URL = "https://quiet-battles-backend.onrender.com/api";
 
 const fallbackImage =

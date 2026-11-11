@@ -53,7 +53,7 @@ function getProductId() {
     }
 
     // Default product for direct visits to product.html
-    return "2";
+    return "1";
 }
 
 

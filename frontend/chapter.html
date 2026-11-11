@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chapter 01 – The Unspoken. Discover the story behind QUIET BATTLES™.">
-    <title>Chapter 01 – The Unspoken | QUIET BATTLES™</title>
+    <meta name="description" content="Discover the stories behind QUIET BATTLES™.">
+    <title>QUIET BATTLES™ | Chapter</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="chapter.css">
 </head>
@@ -40,11 +42,19 @@
         <a href="cart.html">CART</a>
     </div>
 
-    <main>
+    <main id="chapterMain">
 
-        <!-- CHAPTER HERO -->
+        <!-- ERROR MESSAGE -->
+        <div id="chapterError" role="alert"
+             style="display:none; text-align:center; padding:80px 20px;">
+        </div>
+
+
+    
+        <!-- CHAPTER HERO  1st value -->
         <section class="chapter-hero">
             <img
+                id="chapterHeroImage"
                 src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1800&q=85"
                 alt="Black and white fashion portrait"
                 class="chapter-hero-image">
@@ -52,41 +62,57 @@
             <div class="chapter-hero-overlay"></div>
 
             <div class="chapter-hero-content">
-                <p class="chapter-eyebrow">SERIES 01 — THE GENTLE ARMOR™</p>
-                <h1>THE<br><span>UNSPOKEN.</span></h1>
-                <p>CHAPTER 01</p>
+                <p class="chapter-eyebrow" id="chapterSeries">
+                    SERIES 01 — THE GENTLE ARMOR™
+                </p>
+
+                <h1 id="chapterTitle">THE UNSPOKEN.</h1>
+
+                <p id="chapterNumber">CHAPTER 01</p>
             </div>
         </section>
 
-        <!-- INTRODUCTION -->
-        <section class="chapter-intro">
+
+
+
+
+
+
+
+        <!-- id need to add INTRODUCTION -->
+        <section class="chapter-intro" id="chapterStorySection">
             <p class="section-label">THE STORY BEGINS</p>
-            <h2>Some battles make no sound.</h2>
-            <p class="chapter-lead">
+
+            <h2 id="chapterIntroTitle">
+                Some battles make no sound.
+            </h2>
+
+            <p class="chapter-lead" id="chapterIntro">
                 Not every struggle is visible. Some are carried quietly,
                 hidden behind ordinary days and familiar smiles.
             </p>
         </section>
 
         <!-- STORY SECTION 1 -->
-        <section class="story-section">
+        <section class="story-section" id="chapterStorySection">
             <div class="story-image">
                 <img
+                    id="chapterStoryImage"
                     src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=85"
                     alt="Thoughtful fashion portrait">
             </div>
 
             <div class="story-text">
                 <p class="section-label">01 / THE SILENCE</p>
-                <h2>What we don't say.</h2>
-                <p>
+
+                <h2 id="chapterStoryHeading">
+                    What we don't say.
+                </h2>
+
+                <p id="chapterStoryContent">
                     There are things we keep to ourselves. Words left
                     unspoken, emotions carefully folded away, and moments
                     that change us without anyone noticing.
-                </p>
-                <p>
-                    Silence does not always mean weakness. Sometimes it is
-                    where courage begins.
                 </p>
             </div>
         </section>
@@ -108,11 +134,13 @@
             <div class="story-text">
                 <p class="section-label">02 / THE ARMOR</p>
                 <h2>Wearing your strength.</h2>
+
                 <p>
                     We all find our own ways to keep moving. A quiet
                     determination. A small act of hope. The decision to
                     begin again.
                 </p>
+
                 <p>
                     The Gentle Armor is a reminder that what protects us
                     does not always have to be loud. It can be subtle,
@@ -125,29 +153,43 @@
         <section class="chapter-ending">
             <p class="section-label">THE GENTLE ARMOR™</p>
             <h2>Your story is your strength.</h2>
+
             <p>
                 Every mark, every memory, every quiet victory is part of
                 who you are. Wear it with intention.
             </p>
-            <a href="product.html" class="gold-button">DISCOVER THE PIECE</a>
+
+            <a href="product.html" class="gold-button">
+                DISCOVER THE PIECE
+            </a>
         </section>
 
         <!-- RELATED PRODUCT -->
-        <section class="chapter-product">
+        <section class="chapter-product" id="chapterProductSection">
+
             <div class="chapter-product-image">
                 <img
+                    id="relatedProductImage"
                     src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
                     alt="Minimal fashion collection">
             </div>
 
             <div class="chapter-product-info">
                 <p class="section-label">CONNECTED TO THIS CHAPTER</p>
-                <h2>THE GENTLE ARMOR</h2>
-                <p>
+
+                <h2 id="relatedProductName">THE GENTLE ARMOR</h2>
+
+                <p id="relatedProductDescription">
                     A piece inspired by quiet courage and the strength
                     we carry within.
                 </p>
-                <a href="product.html" class="text-link">VIEW PRODUCT →</a>
+
+                <p id="relatedProductPrice"></p>
+
+                <a href="product.html" id="relatedProductLink"
+                   class="text-link">
+                    VIEW PRODUCT →
+                </a>
             </div>
         </section>
 
@@ -162,5 +204,7 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="chapter.js"></script>
+
 </body>
 </html>

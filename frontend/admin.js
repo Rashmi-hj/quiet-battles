@@ -31,12 +31,19 @@ const forms = {
 
 async function apiRequest(endpoint, options = {}) {
 
+    const headers = {
+        ...options.headers
+    };
+
+    // Add JSON Content-Type only when sending a request body.
+    // This avoids unnecessary CORS preflight requests on GET.
+    if (options.body) {
+        headers["Content-Type"] = "application/json";
+    }
+
     const response = await fetch(API_BASE_URL + endpoint, {
         ...options,
-        headers: {
-            "Content-Type": "application/json",
-            ...options.headers
-        }
+        headers
     });
 
     if (!response.ok) {
@@ -316,8 +323,9 @@ async function refreshDashboard() {
 
         console.error("Dashboard loading error:", error);
 
-        alert("Unable to load dashboard data. Please check whether Spring Boot is running.");
-
+        alert(
+            "Unable to load dashboard data. Please check the API connection and CORS configuration."
+        );
     }
 }
 

@@ -1,8 +1,9 @@
-
-const API_BASE_URL = "https://quiet-battles-backend.onrender.com/api";
+const API_BASE_URL =
+    "https://quiet-battles-backend.onrender.com/api";
 
 const fallbackImage =
     "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=85";
+
 
 // LOAD SELECTED CHAPTER
 async function loadChapter() {
@@ -10,10 +11,10 @@ async function loadChapter() {
     const params = new URLSearchParams(window.location.search);
     const chapterId = params.get("id");
 
-    const errorElement = document.getElementById("chapterError");
-
-    if (!chapterId || !/^\d+$/.test(chapterId)) {
-        showChapterError("Please select a valid Chapter from the Archive.");
+    if (!chapterId || !/^[1-9]\d*$/.test(chapterId)) {
+        showChapterError(
+            "Please select a valid Chapter from the Archive."
+        );
         return;
     }
 
@@ -31,33 +32,45 @@ async function loadChapter() {
 
         // UPDATE PAGE TITLE
         document.title =
-            `${chapter.title} | QUIET BATTLES™`;
+            `${chapter.title || "Chapter"} | QUIET BATTLES™`;
 
-        // UPDATE CHAPTER HERO
-        document.getElementById("chapterHeroImage").src =
-            chapter.coverImage || fallbackImage;
+        // UPDATE META DESCRIPTION
+        const metaDescription =
+            document.querySelector('meta[name="description"]');
 
-        document.getElementById("chapterHeroImage").alt =
-            chapter.title || "Chapter image";
+        if (metaDescription) {
+            metaDescription.content =
+                `Discover ${chapter.title || "this chapter"} from QUIET BATTLES™.`;
+        }
 
+        // UPDATE HERO IMAGE
+        const heroImage =
+            document.getElementById("chapterHeroImage");
+
+        heroImage.src = chapter.coverImage || fallbackImage;
+        heroImage.alt = chapter.title || "Chapter image";
+
+        // UPDATE SERIES
         document.getElementById("chapterSeries").textContent =
             `SERIES — ${chapter.seriesTitle || "QUIET BATTLES™"}`;
 
-        // UPDATE CHAPTER TITLE SAFELY
-        const titleElement =
-            document.getElementById("chapterTitle");
+        // UPDATE CHAPTER TITLE
+        document.getElementById("chapterTitle").textContent =
+            chapter.title || "UNTITLED";
 
-        titleElement.textContent = chapter.title || "UNTITLED";
+        // UPDATE CHAPTER NUMBER
+        const number = chapter.chapterNumber || Number(chapterId);
 
         document.getElementById("chapterNumber").textContent =
-            `CHAPTER ${String(chapter.chapterNumber).padStart(2, "0")}`;
+            `CHAPTER ${String(number).padStart(2, "0")}`;
 
         // UPDATE INTRODUCTION
         document.getElementById("chapterIntroTitle").textContent =
             chapter.title || "THE STORY BEGINS";
 
         document.getElementById("chapterIntro").textContent =
-            chapter.intro || "";
+            chapter.intro ||
+            "The story of this chapter is being prepared.";
 
         // UPDATE STORY
         document.getElementById("chapterStoryHeading").textContent =
@@ -66,17 +79,18 @@ async function loadChapter() {
         document.getElementById("chapterStoryContent").textContent =
             chapter.storyContent || "";
 
-        // HIDE EMPTY STORY SECTION IF NECESSARY
-        if (!chapter.storyContent) {
-            document.querySelector(".story-section").style.display = "none";
-        }
-
-        // UPDATE IMAGE
+        // UPDATE STORY IMAGE
         const storyImage =
             document.getElementById("chapterStoryImage");
 
         storyImage.src = chapter.coverImage || fallbackImage;
         storyImage.alt = chapter.title || "Chapter story";
+
+        // HIDE FIRST STORY SECTION IF NO STORY CONTENT EXISTS
+        if (!chapter.storyContent) {
+            document.querySelector(".story-section").style.display =
+                "none";
+        }
 
         // LOAD RELATED PRODUCT
         await loadRelatedProduct(chapter.id);
@@ -121,21 +135,30 @@ async function loadRelatedProduct(chapterId) {
             return;
         }
 
+        // PRODUCT NAME
         document.getElementById("relatedProductName").textContent =
-            product.name;
+            product.name || "UNTITLED PRODUCT";
 
+        // PRODUCT DESCRIPTION
         document.getElementById("relatedProductDescription").textContent =
             product.description || "";
 
-        document.getElementById("relatedProductPrice").textContent =
-            `₹${Number(product.price).toLocaleString("en-IN")}`;
+        // PRODUCT PRICE
+        const price = Number(product.price);
 
+        document.getElementById("relatedProductPrice").textContent =
+            Number.isFinite(price)
+                ? `₹${price.toLocaleString("en-IN")}`
+                : "";
+
+        // PRODUCT IMAGE
         document.getElementById("relatedProductImage").src =
             product.image || fallbackImage;
 
         document.getElementById("relatedProductImage").alt =
-            product.name;
+            product.name || "Related product";
 
+        // PRODUCT LINK
         document.getElementById("relatedProductLink").href =
             `product.html?id=${product.id}`;
 
@@ -158,11 +181,13 @@ function showChapterError(message) {
     errorElement.textContent = message;
     errorElement.style.display = "block";
 
-    // Hide chapter content but keep the error visible.
+    // HIDE OTHER MAIN CONTENT
     Array.from(main.children).forEach(section => {
+
         if (section.id !== "chapterError") {
             section.style.display = "none";
         }
+
     });
 
 }
